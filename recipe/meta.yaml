@@ -1,44 +1,47 @@
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: sphinxcontrib-qthelp
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/sphinxcontrib-qthelp/sphinxcontrib-qthelp-{{ version }}.tar.gz
-  sha256: 4c33767ee058b70dba89a6fc5c1892c0d57a54be67ddd3e7875a18d14cba5a72
+  url: https://pypi.io/packages/source/s/sphinxcontrib-qthelp/sphinxcontrib_qthelp-{{ version }}.tar.gz
+  sha256: f0a1c141420499af2f1a1ff438f9fc910a3548f7a82a1169d9efcc674fcf79c6
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.9
     - pip
+    - flit-core >=3.7
   run:
-    - python >=3.5
+    - python >=3.9
+    - sphinx >=5
 
 test:
-  requires:
-    - pip
-    # This is a circular dependency b/c sphinx depends on this package now :-/
-    - sphinx >=2
-  commands:
-    - pip check
   imports:
     - sphinxcontrib
     - sphinxcontrib.qthelp
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
-  home: http://sphinx-doc.org/
+  home: https://www.sphinx-doc.org/
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
   summary: sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document
+  doc_url: https://www.sphinx-doc.org/en/master/
+  dev_url: https://github.com/sphinx-doc/sphinxcontrib-qthelp
 
 extra:
   recipe-maintainers:
     - AA-Turner
+    - conda-forge/sphinx
     - ocefpaf
