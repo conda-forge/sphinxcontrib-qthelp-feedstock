@@ -1,4 +1,4 @@
-{% set version = "1.0.5" %}
+{% set version = "1.0.6" %}
 
 package:
   name: sphinxcontrib-qthelp
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sphinxcontrib-qthelp/sphinxcontrib_qthelp-{{ version }}.tar.gz
-  sha256: d31d1a1beaf3894866bb318fb712f1edc82687f1c06235a01e5b2c50c36d5c40
+  sha256: 62b9d1a186ab7f5ee3356d906f648cacb7a6bdb94d201ee7adf26db55092982d
 
 build:
   number: 0
