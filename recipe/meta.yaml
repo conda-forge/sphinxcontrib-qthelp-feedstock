@@ -1,4 +1,4 @@
-{% set version = "1.0.8" %}
+{% set version = "2.0.0" %}
 
 package:
   name: sphinxcontrib-qthelp
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sphinxcontrib-qthelp/sphinxcontrib_qthelp-{{ version }}.tar.gz
-  sha256: db3f8fa10789c7a8e76d173c23364bdf0ebcd9449969a9e6a3dd31b8b7469f03
+  sha256: 4fe7d0ac8fc171045be623aba3e2a8f613f8682731f9153bb2e40ece16b9bbab
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   home: https://www.sphinx-doc.org/
   license: BSD-2-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file: LICENCE.rst
   summary: sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document
   doc_url: https://www.sphinx-doc.org/en/master/
   dev_url: https://github.com/sphinx-doc/sphinxcontrib-qthelp
